@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="MgPzah" name="Sidechained" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+  <MAINGROUP id="YeESTR" name="Sidechained">
+    <GROUP id="{09A1EAFC-7152-3462-42D1-BF3ED6C4AF8E}" name="Source">
+      <FILE id="lGCiL1" name="CurvePoint.cpp" compile="1" resource="0" file="Source/CurvePoint.cpp"/>
+      <FILE id="P8rTYf" name="CurvePoint.h" compile="0" resource="0" file="Source/CurvePoint.h"/>
+      <FILE id="XYNaZB" name="EnvelopeCurve.cpp" compile="1" resource="0"
+            file="Source/EnvelopeCurve.cpp"/>
+      <FILE id="LhPvB1" name="EnvelopeCurve.h" compile="0" resource="0" file="Source/EnvelopeCurve.h"/>
+      <FILE id="RM4xuT" name="Utils.cpp" compile="1" resource="0" file="Source/Utils.cpp"/>
+      <FILE id="QuAJOK" name="Utils.h" compile="0" resource="0" file="Source/Utils.h"/>
+      <FILE id="hHDFBO" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="YoqIWW" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="DtTTIa" name="Theme.h" compile="0" resource="0" file="Source/Theme.h"/>
+      <FILE id="E5cmki" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="t6KSYR" name="SettingsParameters.cpp" compile="1" resource="0"
+            file="Source/SettingsParameters.cpp"/>
+      <FILE id="VwNWCF" name="SettingsParameters.h" compile="0" resource="0"
+            file="Source/SettingsParameters.h"/>
+      <FILE id="gy6amd" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Sidechained"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="Sidechained"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../Libraries/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2019>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
