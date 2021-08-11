@@ -21,8 +21,6 @@ namespace Theme {
     const float fontSizeh2 = 24;
     const float fontSizeh3 = 12;
     const int containersMargin = 10;
-    const juce::String titleFontFamily = "Wallpoet";
-    const juce::String textFontFamily = "Walter Turncoat";
     const float fontSizeNormal = 10.0f;
     const int horizontalMargin = 2;
     const int verticalMargin = 10;

@@ -21,21 +21,3 @@ void DBGF(juce::String format, Args... args)
     sprintf(buffer, format.toStdString().c_str(), args...);
     DBG(buffer);
 }
-
-
-
-//==============================================================================
-/*
-*/
-class Utils  : public juce::Component
-{
-public:
-    Utils();
-    ~Utils() override;
-
-    void paint (juce::Graphics&) override;
-    void resized() override;
-
-private:
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Utils)
-};
