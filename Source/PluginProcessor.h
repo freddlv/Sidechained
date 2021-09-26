@@ -99,7 +99,7 @@ public:
     void resetCurSamplesProcessedPerChannel(size_t channelID);
 
     steady_clock::time_point startTime;
-    std::vector<size_t> curSamplesProcessedPerChannel;
+    std::vector<juce::int64> curSamplesProcessedPerChannel;
 
     const size_t totalPoints = 8;
     juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();

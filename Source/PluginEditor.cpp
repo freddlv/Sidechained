@@ -50,6 +50,7 @@ SChainAudioProcessorEditor::SChainAudioProcessorEditor (SChainAudioProcessor& p)
 
     headerLabel.setColour(juce::Label::textColourId, juce::Colours::white);
     headerLabel.setText("SIDECHAINED", juce::dontSendNotification);
+    headerLabel.setFont(juce::Font(Theme::titleFontFamily, Theme::fontSizeh1, juce::Font::plain));
     headerLabel.setJustificationType(juce::Justification::verticallyCentred);
     addAndMakeVisible(headerLabel);
 

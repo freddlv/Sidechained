@@ -21,13 +21,15 @@ namespace Theme {
     const float fontSizeh2 = 24;
     const float fontSizeh3 = 12;
     const int containersMargin = 10;
+    const juce::String titleFontFamily = "Wallpoet";
+    const juce::String textFontFamily = "Walter Turncoat";
     const float fontSizeNormal = 10.0f;
     const int horizontalMargin = 2;
     const int verticalMargin = 10;
     const juce::Colour curveColor(0x7FFFFFFu);
     const juce::Colour anchorPointColor(0x7FFFFFFu);
     const juce::Colour controlPointColor(0xFF47D1EFu);
-    const juce::String logoPath = "../../Source/pluginLogo.png";
+    const juce::String logoPath = "C:/Users/frebo/Downloads/pluginLogo.png";
     const int pointRadius = 4;
 
 };

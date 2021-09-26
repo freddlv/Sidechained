@@ -79,6 +79,18 @@ void CurvePoint::mouseDrag(const juce::MouseEvent& e)
     float curvePosY = float(frameArea.getBottom() - pos.getY());
     p.X = NormalizeTimeInterval(frameArea.getX(), frameArea.getRight(), float(pos.getX()));
     p.Y = NormalizeTimeInterval(frameArea.getY(), frameArea.getBottom(), curvePosY);
+    if (p.X < 0.0f) {
+        p.X = 0.0f;
+    }
+    else if (p.X > 1.0f) {
+        p.X = 1.0f;
+    }
+    if (p.Y < 0.0f) {
+        p.Y = 0.0f;
+    }
+    else if (p.Y > 1.0f) {
+        p.Y = 1.0f;
+    }
     pointXAttachment.get()->setValueAsPartOfGesture(p.X);
     pointYAttachment.get()->setValueAsPartOfGesture(p.Y);
 }

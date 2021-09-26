@@ -1,8 +1,8 @@
 /*
   ==============================================================================
 
-    Utils.h
-    Created: 7 Aug 2021 12:59:01pm
+    TimeParameters.h
+    Created: 11 Aug 2021 11:05:39am
     Author:  frebo
 
   ==============================================================================
@@ -11,31 +11,19 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include <stdio.h>
-
-template <typename... Args>
-void DBGF(juce::String format, Args... args)
-{
-    juce::String output;
-    char buffer[256];
-    sprintf(buffer, format.toStdString().c_str(), args...);
-    DBG(buffer);
-}
-
-
 
 //==============================================================================
 /*
 */
-class Utils  : public juce::Component
+class TimeParameters  : public juce::Component
 {
 public:
-    Utils();
-    ~Utils() override;
+    TimeParameters();
+    ~TimeParameters() override;
 
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Utils)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TimeParameters)
 };

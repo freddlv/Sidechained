@@ -1,29 +1,29 @@
 /*
   ==============================================================================
 
-    Utils.cpp
-    Created: 7 Aug 2021 12:59:01pm
+    TriggerParameters.cpp
+    Created: 11 Aug 2021 11:05:57am
     Author:  frebo
 
   ==============================================================================
 */
 
 #include <JuceHeader.h>
-#include "Utils.h"
+#include "TriggerParameters.h"
 
 //==============================================================================
-Utils::Utils()
+TriggerParameters::TriggerParameters()
 {
     // In your constructor, you should add any child components, and
     // initialise any special settings that your component needs.
 
 }
 
-Utils::~Utils()
+TriggerParameters::~TriggerParameters()
 {
 }
 
-void Utils::paint (juce::Graphics& g)
+void TriggerParameters::paint (juce::Graphics& g)
 {
     /* This demo code just fills the component's background and
        draws some placeholder text to get you started.
@@ -39,11 +39,11 @@ void Utils::paint (juce::Graphics& g)
 
     g.setColour (juce::Colours::white);
     g.setFont (14.0f);
-    g.drawText ("Utils", getLocalBounds(),
+    g.drawText ("TriggerParameters", getLocalBounds(),
                 juce::Justification::centred, true);   // draw some placeholder text
 }
 
-void Utils::resized()
+void TriggerParameters::resized()
 {
     // This method is where you should set the bounds of any child
     // components that your component contains..

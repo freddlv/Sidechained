@@ -40,9 +40,9 @@ SChainAudioProcessor::SChainAudioProcessor()
     setPointAtID(1, Point(0.1f, 0.0f));
     setPointAtID(2, Point(0.1f, 1.0f));
     setPointAtID(3, Point(0.73f, 1.0f));
-    setPointAtID(4, Point(0.90f, 1.0f));
+    setPointAtID(4, Point(0.99f, 1.0f));
     setPointAtID(5, Point(0.93f, 1.0f));
-    setPointAtID(6, Point(0.95f, 1.0f));
+    setPointAtID(6, Point(0.30f, 1.0f));
     setPointAtID(7, Point(1.0f, 0.0f));
 }
 
@@ -160,7 +160,6 @@ bool SChainAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) c
 
 void SChainAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
@@ -170,12 +169,12 @@ void SChainAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
     float duration = 0.25f;
 
     int timeIntervalChoice = timeChoiceParam->getIndex();
-    if (timeIntervalChoice < SettingsParameters::timeSettings.size() && timeIntervalChoice > 0) {
+    if (timeIntervalChoice < SettingsParameters::timeSettings.size() && timeIntervalChoice >= 0) {
         duration = SettingsParameters::timeSettings[timeIntervalChoice].duration;
     }
-    juce::int64 currentPositionInSamples = 0;
+    
     float bpm = 120;
-
+    juce::int64 currentPositionInSamples = 0;
     int numTimeSig = 4;
     playHead = this->getPlayHead();
     if (playHead != nullptr) {
@@ -202,16 +201,9 @@ void SChainAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
         {
             float t = NormalizeTimeInterval(0, schainLengthInSamples, curSamplesProcessedPerChannel[channel]);
             float gainFactor = getGainBezierValue(t);
-            if (gainFactor > 1.0f) {
-                gainFactor = 1.0f;
-            }
-            else if (gainFactor < 0.0f) {
-                gainFactor = 0.0f;
-            }
-            else if(gainFactor)
             channelData[i] *= gainFactor;
-            curSamplesProcessedPerChannel[channel]++;
             curSamplesProcessedPerChannel[channel] = currentPositionInSamples % schainLengthInSamples;
+            curSamplesProcessedPerChannel[channel]++;
         }
     }
 }
@@ -357,7 +349,7 @@ float SChainAudioProcessor::getGainBezierValue(float t)
     Point controlLeft2 = getPointAtID(static_cast<size_t>(Points::Control2));
     Point controlRight1 = getPointAtID(static_cast<size_t>(Points::Control3));
     Point controlRight2 = getPointAtID(static_cast<size_t>(Points::Control4));
-    float gain = 0.0;
+    float gain = 0.0f;
     //Attack part of bezier curve:
     if (t > leftMostAnchor.X && t < lineStartPoint.X) // Attack part
     {

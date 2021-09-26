@@ -109,7 +109,7 @@ private:
     juce::GroupComponent cTimeSettingsContainer;
     juce::GroupComponent cTriggerSContainer;
     juce::GroupComponent cEnvelopeContainer;
-    juce::Image logoImage{ juce::ImageFileFormat::loadFrom(juce::File::getCurrentWorkingDirectory().getChildFile(Theme::logoPath)) };
+    juce::Image logoImage{ juce::ImageFileFormat::loadFrom(juce::File(Theme::logoPath)) };
     juce::ImageButton cBtnLogo;
 
     juce::Rectangle<int> envelopeCurveArea{ getLocalBounds() };
